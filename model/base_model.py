@@ -51,9 +51,9 @@ class BaseModel(object):
                 raise NotImplementedError("Unknown method {}".format(_lr_m))
 
             if clip > 0: # gradient clipping if clip is positive
-                grads, vs     = zip(*optimizer.compute_gradients(loss))
+                grads, vs     = list(zip(*optimizer.compute_gradients(loss)))
                 grads, gnorm  = tf.clip_by_global_norm(grads, clip)
-                self.train_op = optimizer.apply_gradients(zip(grads, vs))
+                self.train_op = optimizer.apply_gradients(list(zip(grads, vs)))
             else:
                 self.train_op = optimizer.minimize(loss)
 
@@ -148,7 +148,7 @@ class BaseModel(object):
         self.logger.info("Testing model over test set")
         metrics = self.run_evaluate(test, report=True)
         msg = " - ".join(["{} {:04.2f}".format(k, v)
-                for k, v in metrics.items() if not('report' in k or 'matrix' in k)])
+                for k, v in list(metrics.items()) if not('report' in k or 'matrix' in k)])
         self.logger.info(msg)
 
         return metrics

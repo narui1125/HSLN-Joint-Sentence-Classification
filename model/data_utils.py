@@ -111,7 +111,7 @@ def get_vocabs(datasets):
             for sent in sentences:
                 vocab_words.update(sent)
             vocab_tags.update(tags)
-    print("- done. {} tokens".format(len(vocab_words)))
+    print(("- done. {} tokens".format(len(vocab_words))))
     return vocab_words, vocab_tags
 
 
@@ -149,7 +149,7 @@ def get_wordvec_vocab(filename):
         for line in f:
             word = line.strip().split(' ')[0]
             vocab.add(word)
-    print("- done. {} tokens".format(len(vocab)))
+    print(("- done. {} tokens".format(len(vocab))))
     return vocab
 
 
@@ -173,7 +173,7 @@ def write_vocab(vocab, filename):
                 f.write("{}\n".format(word))
             else:
                 f.write(word)
-    print("- done. {} tokens".format(len(vocab)))
+    print(("- done. {} tokens".format(len(vocab))))
 
 
 def load_vocab(filename):
@@ -217,7 +217,7 @@ def export_trimmed_wordvec_vectors(vocab, wordvec_filename, trimmed_filename):
                     outFile.write(line)
                     num += 1
 
-    print('{} out of {} tokens can find pre-trained embeddings!'.format(num, len(vocab)))
+    print(('{} out of {} tokens can find pre-trained embeddings!'.format(num, len(vocab))))
 
 
 def export_trimmed_wordvec_vectors_bin(vocab, wordvec_filename, trimmed_filename):
@@ -242,7 +242,7 @@ def export_trimmed_wordvec_vectors_bin(vocab, wordvec_filename, trimmed_filename
                 outFile.write(' '.join([token] + list(map(str, vec))) + '\n')
                 num += 1
 
-    print('{} out of {} tokens can find pre-trained embeddings!'.format(num, len(vocab)))
+    print(('{} out of {} tokens can find pre-trained embeddings!'.format(num, len(vocab))))
 
 
 def get_trimmed_wordvec_vectors(filename, vocab):
@@ -358,12 +358,12 @@ def pad_sequences(sequences, pad_tok, nlevels=2):
 
     """
     if nlevels == 1:
-        max_length = max(map(lambda x : len(x), sequences))
+        max_length = max([len(x) for x in sequences])
         sequence_padded, sequence_length = _pad_sequences(sequences,
                                             pad_tok, max_length) 
 
     elif nlevels == 2:
-        max_length_sentence = max([max(map(lambda x: len(x), seq))
+        max_length_sentence = max([max([len(x) for x in seq])
                                for seq in sequences])
         sequence_padded, sequence_length = [], []
         for seq in sequences:
@@ -372,16 +372,16 @@ def pad_sequences(sequences, pad_tok, nlevels=2):
             sequence_padded += [sp]
             sequence_length += [sl]
 
-        max_length_document = max(map(lambda x : len(x), sequences))
+        max_length_document = max([len(x) for x in sequences])
         sequence_padded, _ = _pad_sequences(sequence_padded,
                 [pad_tok]*max_length_sentence, max_length_document)
         sequence_length, _ = _pad_sequences(sequence_length, 0,
                 max_length_document)
 
     elif nlevels == 3:
-        max_length_word = max([max([max(map(lambda x: len(x), sen)) for sen in seq])
+        max_length_word = max([max([max([len(x) for x in sen]) for sen in seq])
                                for seq in sequences])
-        max_length_sentence = max([max(map(lambda x: len(x), seq))
+        max_length_sentence = max([max([len(x) for x in seq])
                                for seq in sequences])
         sequence_padded, sequence_length = [], []
         for seq in sequences:
@@ -399,7 +399,7 @@ def pad_sequences(sequences, pad_tok, nlevels=2):
             sequence_padded += [sentence_padded]
             sequence_length += [sentence_length]
 
-        max_length_document = max(map(lambda x : len(x), sequences))
+        max_length_document = max([len(x) for x in sequences])
         sequence_padded, _ = _pad_sequences(sequence_padded,
                 [[pad_tok]*max_length_word]*max_length_sentence, max_length_document)
         sequence_length, _ = _pad_sequences(sequence_length, [0]*max_length_sentence,
@@ -425,7 +425,7 @@ def minibatches(data, minibatch_size):
             x_batch, y_batch = [], []
 
         if type(x[0]) == tuple:
-            x = zip(*x)
+            x = list(zip(*x))
         x_batch += [x]
         y_batch += [y]
 
@@ -466,7 +466,7 @@ def get_chunks(seq, tags):
 
     """
     default = tags[NONE]
-    idx_to_tag = {idx: tag for tag, idx in tags.items()}
+    idx_to_tag = {idx: tag for tag, idx in list(tags.items())}
     chunks = []
     chunk_type, chunk_start = None, None
     for i, tok in enumerate(seq):

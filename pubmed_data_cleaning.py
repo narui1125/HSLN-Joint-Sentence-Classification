@@ -19,9 +19,9 @@ with open(out_filename, 'w') as outFile:
 				lines_cp = lines[:]
 				for level, line in zip(levels[::-1], lines_cp[::-1]):
 					if level <= 0:
-						print(abstract_title+' Wrong line: '+lines.pop())
+						print((abstract_title+' Wrong line: '+lines.pop()))
 					elif level == 1 and len(line.strip().split()) < 4:
-						print(abstract_title+' Wrong line: '+lines.pop())
+						print((abstract_title+' Wrong line: '+lines.pop()))
 					else:
 						break
 				for line in lines:

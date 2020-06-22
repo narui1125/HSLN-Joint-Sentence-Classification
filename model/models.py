@@ -15,7 +15,7 @@ class HANNModel(BaseModel):
     def __init__(self, config):
         super(HANNModel, self).__init__(config)
         self.idx_to_tag = {idx: tag for tag, idx in
-                           self.config.vocab_tags.items()}
+                           list(self.config.vocab_tags.items())}
         self.initializer = tf.contrib.layers.xavier_initializer()
         self.regularizer = tf.contrib.layers.l2_regularizer(scale=self.config.l2_reg_lambda)
         self.config = config
@@ -74,7 +74,7 @@ class HANNModel(BaseModel):
             for abstract in words:
                 char_ids_abstract, word_ids_abstract = [], []
                 for sent in abstract:
-                    char_id, word_id = zip(*sent)
+                    char_id, word_id = list(zip(*sent))
                     char_ids_abstract += [list(char_id)]
                     word_ids_abstract += [list(word_id)]
                 char_ids += [char_ids_abstract]
@@ -543,7 +543,7 @@ class HANNModel(BaseModel):
 
         metrics = self.run_evaluate(dev)
         msg = " - ".join(["{} {:04.2f}".format(k, v)
-                for k, v in metrics.items() if not('report' in k or 'matrix' in k)])
+                for k, v in list(metrics.items()) if not('report' in k or 'matrix' in k)])
         self.logger.info(msg)
 
         return metrics["weighted-f1"]
