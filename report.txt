@@ -1,0 +1,238 @@
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 9 files
+Detected 18 issues that require attention
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+File: HSLN-Joint-Sentence-Classification/model/models.py
+--------------------------------------------------------------------------------
+HSLN-Joint-Sentence-Classification/model/models.py:124:35: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+HSLN-Joint-Sentence-Classification/model/models.py:135:30: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+HSLN-Joint-Sentence-Classification/model/models.py:141:35: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+HSLN-Joint-Sentence-Classification/model/models.py:145:34: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+HSLN-Joint-Sentence-Classification/model/models.py:198:29: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+HSLN-Joint-Sentence-Classification/model/models.py:201:29: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+HSLN-Joint-Sentence-Classification/model/models.py:203:29: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+HSLN-Joint-Sentence-Classification/model/models.py:215:29: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+HSLN-Joint-Sentence-Classification/model/models.py:218:29: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+HSLN-Joint-Sentence-Classification/model/models.py:282:29: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+HSLN-Joint-Sentence-Classification/model/models.py:285:29: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+HSLN-Joint-Sentence-Classification/model/models.py:287:29: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+HSLN-Joint-Sentence-Classification/model/models.py:342:22: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+HSLN-Joint-Sentence-Classification/model/models.py:346:22: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+HSLN-Joint-Sentence-Classification/model/models.py:385:43: ERROR: Using member tf.contrib.crf.crf_log_likelihood in deprecated module tf.contrib. tf.contrib.crf.crf_log_likelihood cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+HSLN-Joint-Sentence-Classification/model/models.py:467:45: ERROR: Using member tf.contrib.crf.viterbi_decode in deprecated module tf.contrib. tf.contrib.crf.viterbi_decode cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+File: HSLN-Joint-Sentence-Classification/model/base_model.py
+--------------------------------------------------------------------------------
+HSLN-Joint-Sentence-Classification/model/base_model.py:24:20: ERROR: Using member tf.contrib.framework.get_variables in deprecated module tf.contrib. tf.contrib.framework.get_variables cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+HSLN-Joint-Sentence-Classification/model/base_model.py:85:8: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+================================================================================
+Detailed log follows:
+
+================================================================================
+================================================================================
+Input tree: 'HSLN-Joint-Sentence-Classification'
+================================================================================
+--------------------------------------------------------------------------------
+Processing file 'HSLN-Joint-Sentence-Classification/pubmed_data_cleaning.py'
+ outputting to 'New/pubmed_data_cleaning.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'HSLN-Joint-Sentence-Classification/train.py'
+ outputting to 'New/train.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'HSLN-Joint-Sentence-Classification/build_data.py'
+ outputting to 'New/build_data.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'HSLN-Joint-Sentence-Classification/model/general_utils.py'
+ outputting to 'New/model/general_utils.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'HSLN-Joint-Sentence-Classification/model/config.py'
+ outputting to 'New/model/config.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'HSLN-Joint-Sentence-Classification/model/models.py'
+ outputting to 'New/model/models.py'
+--------------------------------------------------------------------------------
+
+19:27: INFO: Changing tf.contrib.layers xavier initializer to a tf.compat.v1.keras.initializers.VarianceScaling and converting arguments.
+
+20:27: INFO: Multiplying scale arg of tf.contrib.layers.l2_regularizer by half to what tf.keras.regularizers.l2 expects.
+
+27:32: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+31:24: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+35:32: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+39:24: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+43:28: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+47:22: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+51:23: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+53:18: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+121:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+121:46: INFO: Renamed 'tf.AUTO_REUSE' to 'tf.compat.v1.AUTO_REUSE'
+124:35: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+124:35: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+135:30: INFO: Added keywords to args of function 'tf.nn.embedding_lookup'
+135:30: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+139:17: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+139:50: INFO: Renamed 'tf.AUTO_REUSE' to 'tf.compat.v1.AUTO_REUSE'
+141:35: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+141:35: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+145:34: INFO: Added keywords to args of function 'tf.nn.embedding_lookup'
+145:34: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+149:20: INFO: Added keywords to args of function 'tf.shape'
+155:26: INFO: Renamed 'tf.contrib.rnn.LSTMCell' to 'tf.compat.v1.nn.rnn_cell.LSTMCell'
+157:26: INFO: Renamed 'tf.contrib.rnn.LSTMCell' to 'tf.compat.v1.nn.rnn_cell.LSTMCell'
+159:26: INFO: Renamed 'tf.nn.bidirectional_dynamic_rnn' to 'tf.compat.v1.nn.bidirectional_dynamic_rnn'
+172:26: INFO: Changing keep_prob arg of tf.nn.dropout to rate, and recomputing value.
+
+183:12: INFO: Added keywords to args of function 'tf.shape'
+197:21: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+197:63: INFO: Renamed 'tf.AUTO_REUSE' to 'tf.compat.v1.AUTO_REUSE'
+198:29: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+198:29: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+201:29: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+201:29: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+202:58: INFO: tf.zeros_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+202:58: INFO: Renamed 'tf.zeros_initializer' to 'tf.compat.v1.zeros_initializer'
+203:29: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+203:29: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+208:21: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+209:30: INFO: Renamed 'tf.contrib.rnn.LSTMCell' to 'tf.compat.v1.nn.rnn_cell.LSTMCell'
+210:30: INFO: Renamed 'tf.contrib.rnn.LSTMCell' to 'tf.compat.v1.nn.rnn_cell.LSTMCell'
+214:21: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+214:63: INFO: Renamed 'tf.AUTO_REUSE' to 'tf.compat.v1.AUTO_REUSE'
+215:29: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+215:29: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+218:29: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+218:29: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+218:70: INFO: tf.zeros_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+218:70: INFO: Renamed 'tf.zeros_initializer' to 'tf.compat.v1.zeros_initializer'
+220:27: INFO: Added keywords to args of function 'tf.nn.conv2d'
+220:27: INFO: Renamed keyword argument for tf.nn.conv2d from filter to filters
+231:62: INFO: Renamed 'tf.nn.bidirectional_dynamic_rnn' to 'tf.compat.v1.nn.bidirectional_dynamic_rnn'
+239:32: INFO: Added keywords to args of function 'tf.transpose'
+248:37: INFO: Added keywords to args of function 'tf.reduce_max'
+254:21: INFO: Changing keep_prob arg of tf.nn.dropout to rate, and recomputing value.
+
+269:21: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+269:65: INFO: Renamed 'tf.AUTO_REUSE' to 'tf.compat.v1.AUTO_REUSE'
+271:34: INFO: Renamed 'tf.contrib.rnn.GRUCell' to 'tf.compat.v1.nn.rnn_cell.GRUCell'
+272:34: INFO: Renamed 'tf.contrib.rnn.GRUCell' to 'tf.compat.v1.nn.rnn_cell.GRUCell'
+274:34: INFO: Renamed 'tf.contrib.rnn.LSTMCell' to 'tf.compat.v1.nn.rnn_cell.LSTMCell'
+275:34: INFO: Renamed 'tf.contrib.rnn.LSTMCell' to 'tf.compat.v1.nn.rnn_cell.LSTMCell'
+277:48: INFO: Renamed 'tf.nn.bidirectional_dynamic_rnn' to 'tf.compat.v1.nn.bidirectional_dynamic_rnn'
+282:29: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+282:29: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+285:29: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+285:29: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+286:58: INFO: tf.zeros_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+286:58: INFO: Renamed 'tf.zeros_initializer' to 'tf.compat.v1.zeros_initializer'
+287:29: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+287:29: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+293:24: INFO: Added keywords to args of function 'tf.transpose'
+302:21: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+302:65: INFO: Renamed 'tf.AUTO_REUSE' to 'tf.compat.v1.AUTO_REUSE'
+304:34: INFO: Renamed 'tf.contrib.rnn.GRUCell' to 'tf.compat.v1.nn.rnn_cell.GRUCell'
+305:34: INFO: Renamed 'tf.contrib.rnn.GRUCell' to 'tf.compat.v1.nn.rnn_cell.GRUCell'
+307:34: INFO: Renamed 'tf.contrib.rnn.LSTMCell' to 'tf.compat.v1.nn.rnn_cell.LSTMCell'
+308:34: INFO: Renamed 'tf.contrib.rnn.LSTMCell' to 'tf.compat.v1.nn.rnn_cell.LSTMCell'
+309:58: INFO: Renamed 'tf.nn.bidirectional_dynamic_rnn' to 'tf.compat.v1.nn.bidirectional_dynamic_rnn'
+315:21: INFO: Changing keep_prob arg of tf.nn.dropout to rate, and recomputing value.
+
+321:17: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+321:61: INFO: Renamed 'tf.AUTO_REUSE' to 'tf.compat.v1.AUTO_REUSE'
+322:26: INFO: Renamed 'tf.contrib.rnn.LSTMCell' to 'tf.compat.v1.nn.rnn_cell.LSTMCell'
+323:26: INFO: Renamed 'tf.contrib.rnn.LSTMCell' to 'tf.compat.v1.nn.rnn_cell.LSTMCell'
+325:44: INFO: Renamed 'tf.nn.bidirectional_dynamic_rnn' to 'tf.compat.v1.nn.bidirectional_dynamic_rnn'
+330:25: INFO: Changing keep_prob arg of tf.nn.dropout to rate, and recomputing value.
+
+341:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+341:45: INFO: Renamed 'tf.AUTO_REUSE' to 'tf.compat.v1.AUTO_REUSE'
+342:22: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+342:22: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+346:22: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+346:22: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+347:50: INFO: tf.zeros_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+347:50: INFO: Renamed 'tf.zeros_initializer' to 'tf.compat.v1.zeros_initializer'
+371:39: INFO: Added keywords to args of function 'tf.argmax'
+377:15: INFO: Added keywords to args of function 'tf.reduce_mean'
+377:42: INFO: Added keywords to args of function 'tf.reduce_sum'
+385:43: ERROR: Using member tf.contrib.crf.crf_log_likelihood in deprecated module tf.contrib. tf.contrib.crf.crf_log_likelihood cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+388:19: INFO: Added keywords to args of function 'tf.reduce_mean'
+393:21: INFO: Added keywords to args of function 'tf.boolean_mask'
+394:19: INFO: Added keywords to args of function 'tf.reduce_mean'
+399:26: INFO: Renamed 'tf.trainable_variables' to 'tf.compat.v1.trainable_variables'
+410:18: INFO: Added keywords to args of function 'tf.transpose'
+412:63: INFO: Added keywords to args of function 'tf.shape'
+416:8: INFO: tf.summary.scalar requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+416:8: INFO: Renamed 'tf.summary.scalar' to 'tf.compat.v1.summary.scalar'
+423:8: INFO: Renamed 'tf.reset_default_graph' to 'tf.compat.v1.reset_default_graph'
+467:45: ERROR: Using member tf.contrib.crf.viterbi_decode in deprecated module tf.contrib. tf.contrib.crf.viterbi_decode cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'HSLN-Joint-Sentence-Classification/model/__init__.py'
+ outputting to 'New/model/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'HSLN-Joint-Sentence-Classification/model/base_model.py'
+ outputting to 'New/model/base_model.py'
+--------------------------------------------------------------------------------
+
+24:20: ERROR: Using member tf.contrib.framework.get_variables in deprecated module tf.contrib. tf.contrib.framework.get_variables cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+25:15: INFO: Renamed 'tf.variables_initializer' to 'tf.compat.v1.variables_initializer'
+41:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+43:28: INFO: Renamed 'tf.train.AdamOptimizer' to 'tf.compat.v1.train.AdamOptimizer'
+45:28: INFO: Renamed 'tf.train.AdagradOptimizer' to 'tf.compat.v1.train.AdagradOptimizer'
+47:28: INFO: Renamed 'tf.train.GradientDescentOptimizer' to 'tf.compat.v1.train.GradientDescentOptimizer'
+49:28: INFO: Renamed 'tf.train.RMSPropOptimizer' to 'tf.compat.v1.train.RMSPropOptimizer'
+64:20: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+65:22: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+66:21: INFO: Renamed 'tf.train.Saver' to 'tf.compat.v1.train.Saver'
+85:8: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+100:27: INFO: tf.summary.merge_all requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+100:27: INFO: Renamed 'tf.summary.merge_all' to 'tf.compat.v1.summary.merge_all'
+101:27: INFO: tf.summary.FileWriter requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+101:27: INFO: Renamed 'tf.summary.FileWriter' to 'tf.compat.v1.summary.FileWriter'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'HSLN-Joint-Sentence-Classification/model/data_utils.py'
+ outputting to 'New/model/data_utils.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
