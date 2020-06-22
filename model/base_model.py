@@ -21,7 +21,7 @@ class BaseModel(object):
 
     def reinitialize_weights(self, scope_name):
         """Reinitializes the weights of a given layer"""
-        variables = tf.contrib.framework.get_variables(scope_name)
+        variables = tf.compat.v1.global_variables(scope_name)
         init = tf.compat.v1.variables_initializer(variables)
         self.sess.run(init)
 

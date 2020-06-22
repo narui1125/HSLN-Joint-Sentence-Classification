@@ -1,6 +1,7 @@
 import numpy as np
 import os
 import tensorflow as tf
+import tensorflow_addons as tfa
 from sklearn.metrics import precision_recall_fscore_support, classification_report, confusion_matrix
 
 
@@ -8,6 +9,7 @@ from .data_utils import minibatches, pad_sequences, get_chunks, PAD
 from .general_utils import Progbar
 from .base_model import BaseModel
 
+tf.compat.v1.disable_eager_execution()
 
 class HANNModel(BaseModel):
     """Specialized class of Model for NER"""
@@ -382,7 +384,7 @@ class HANNModel(BaseModel):
     def add_loss_op(self, logits, logits_no_dropout, labels, document_lengths):
         """Defines the loss"""
         if self.config.use_crf:
-            log_likelihood, trans_params = tf.contrib.crf.crf_log_likelihood(
+            log_likelihood, trans_params = tfa.text.crf_log_likelihood(
                     logits, labels, document_lengths)
             self.trans_params = trans_params # need to evaluate it for decoding
             loss = tf.reduce_mean(input_tensor=-log_likelihood)
@@ -464,7 +466,7 @@ class HANNModel(BaseModel):
             # iterate over the sentences because no batching in vitervi_decode
             for logit, document_length in zip(logits, document_lengths):
                 logit = logit[:document_length] # keep only the valid steps
-                viterbi_seq, viterbi_score = tf.contrib.crf.viterbi_decode(
+                viterbi_seq, viterbi_score = tfa.text.viterbi_decode(
                         logit, trans_params)
                 viterbi_sequences += [viterbi_seq]
 
